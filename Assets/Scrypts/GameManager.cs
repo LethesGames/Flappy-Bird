@@ -5,6 +5,7 @@ using TMPro;
 using System;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using Unity.VisualScripting;
 
 public class GameManager : MonoBehaviour
 {
@@ -39,6 +40,10 @@ public class GameManager : MonoBehaviour
             timer = UnityEngine.Random.Range(2f, 4f);
             spawnPoint.transform.position = new Vector3(spawnPoint.transform.position.x, UnityEngine.Random.Range(-2.3f, 2.3f), spawnPoint.transform.position.z);
         } 
+
+        if(!birdController.GetIsAlive() && Input.GetKeyDown("space")){
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
     }
 
     public void birdCollide(){

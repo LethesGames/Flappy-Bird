@@ -14,10 +14,9 @@ public class MenuManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(Input.GetKeyDown("space")){
+            SceneManager.LoadScene("GameScene");
+        }
         
-    }
-
-    public void LoadGameScene() {
-        SceneManager.LoadScene("GameScene");
     }
 }

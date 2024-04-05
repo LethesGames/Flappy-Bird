@@ -25,4 +25,8 @@ public class BirdController : MonoBehaviour
     public void SetIsAlive(bool isAlive) {
         this.isAlive = isAlive;
     }
+
+    public bool GetIsAlive(){
+        return isAlive;
+    }
 }
