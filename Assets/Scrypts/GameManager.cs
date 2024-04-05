@@ -28,14 +28,16 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SpawnPipe();
+        if(birdController.GetIsAlive()){
+            SpawnPipe();
+        }            
     }
 
     // Update is called once per frame
     void Update()
     {
         timer -= Time.deltaTime;  
-        if(timer <= 0){
+        if(timer <= 0 && birdController.GetIsAlive()){
             SpawnPipe();
             timer = UnityEngine.Random.Range(2f, 4f);
             spawnPoint.transform.position = new Vector3(spawnPoint.transform.position.x, UnityEngine.Random.Range(-2.3f, 2.3f), spawnPoint.transform.position.z);
